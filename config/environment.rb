@@ -4,6 +4,14 @@
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
+require 'awesome_print'
+
+if %w{development test}.include?(ENV['RACK_ENV'])
+  require 'dotenv'
+  Dotenv.load
+  #ap ENV
+end
+
 
 # Require gems we care about
 require 'rubygems'
@@ -19,6 +27,10 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
+require 'json'
+require 'httparty'
+
+require 'pry-byebug'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

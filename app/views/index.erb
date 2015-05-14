@@ -1,0 +1,18 @@
+<h2>Welcome to brewery finder</h2>
+
+<p>Resources:</p>
+<a href="http://www.brewerydb.com/developers">brewerydb API</a><br>
+<a href="https://developers.google.com/maps/web/">Google Maps API</a><br><br>
+
+
+<form action="/breweries" method="post">
+  <input type="text" name="city" placeholder="city">
+  <input type="submit" value="search">
+</form>
+
+
+
+<div>
+  <h2>List of breweries:</h2>
+  <%= @breweries %>
+</div>
