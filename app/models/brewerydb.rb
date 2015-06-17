@@ -31,8 +31,6 @@ module Brewerydb
 
     def get(path, params={})
       url = "#{HOST}/#{API_VERSION}#{path}"
-      p url
-      p params
 
       q = {"key" => KEY}.merge(params)
 

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.2'
 
 # PostgreSQL driver
 gem 'pg'
@@ -8,8 +8,8 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
-gem 'activesupport', '~>4.2.0'
-gem 'activerecord', '~>4.2.0'
+gem 'activesupport'
+gem 'activerecord'
 
 gem 'rake'
 
@@ -23,7 +23,7 @@ gem 'dotenv'
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
-  gem 'rspec', '~>3.0'
+  gem 'rspec'
   gem 'capybara'
 end
 

@@ -1,8 +1,6 @@
 GOOG_KEY = ENV['GOOGLE_API_KEY']
 
 get '/' do
-  api = Brewerydb::Client.new
-  #Brewerydb::Client::KEY.inspect # Check and see if you have a API key.
   erb :index
 end
 
@@ -13,13 +11,14 @@ post '/breweries' do
   @city_brew = []
   @breweries["data"].each do |brew|
     lat = brew["latitude"]
-    long = brew["latitude"]
+    long = brew["longitude"]
     name = brew["brewery"]["name"]
     @city_brew << [name, lat, long]
   end
 
-  content_type :json
+  #p @breweries["data"]
   p @city_brew
+  content_type :json
   return {breweries: @city_brew}.to_json
 end
 
@@ -27,4 +26,3 @@ end
 #   GOOG_KEY = ENV['GOOGLE_API_KEY']
 #   erb :map
 # end
-
