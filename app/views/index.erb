@@ -6,23 +6,10 @@
 
 
 <form id="city" action="/breweries" method="post">
-  <input type="text" name="city" placeholder="city">
+  <input type="text" name="city" placeholder="San Francisco">
   <input type="submit" value="search">
 </form>
 
-<div>
-  <% if @breweries %>
-    <h2>List of breweries:</h2>
-    <p>Found [<%= @city_brew.size %>] breweries.</p>
-    <%= @breweries %>
-  <% end %>
-</div>
 
-<div><ul id="brew"></ul></div>
 <div id="map-canvas"></div>
-
-
-
-
-
-
+<div><ul id="brew"></ul></div>

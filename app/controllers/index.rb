@@ -7,17 +7,23 @@ end
 post '/breweries' do
   # Do shit here to post to brewererydb api
   api = Brewerydb::Client.new
-  @breweries = api.brew_by_city(params[:city])
+  @city = params[:city]
+  @breweries = api.brew_by_city(@city)
   @city_brew = []
-  @breweries["data"].each do |brew|
-    lat = brew["latitude"]
-    long = brew["longitude"]
-    name = brew["brewery"]["name"]
-    @city_brew << [name, lat, long]
+  puts "#####################################"
+  pp params[:city]
+  pp @breweries
+  if @breweries["data"]
+    @breweries["data"].each do |brew|
+      lat = brew["latitude"]
+      long = brew["longitude"]
+      name = brew["brewery"]["name"]
+      @city_brew << [name, lat, long]
+    end
+  else
+    puts "No Breweries, fix return"
   end
 
-  #p @breweries["data"]
-  p @city_brew
   content_type :json
   return {breweries: @city_brew}.to_json
 end

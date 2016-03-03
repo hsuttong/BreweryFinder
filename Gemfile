@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.3.0'
 
 # PostgreSQL driver
 gem 'pg'
@@ -19,6 +19,7 @@ gem 'bcrypt'
 gem 'httparty'
 gem 'awesome_print'
 gem 'dotenv'
+gem 'puma'
 
 group :test do
   gem 'shoulda-matchers'
