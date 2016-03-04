@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   var myLatLng = new google.maps.LatLng(21.3000, -157.8167);
   var map;
+  var markers = [];
 
   var initialize = function() {
     // var myLatLng = new google.maps.LatLng(21.3000, -157.8167);
@@ -16,6 +17,14 @@ $(document).ready(function() {
 
   $("#city").on('submit', function(event) {
     event.preventDefault();
+    //clear out the markers
+    if (markers.length > 0) {
+      for (var i=0; i < markers.length; i++) {
+        markers[i].setMap(null)
+      }
+      markers = [];
+    }
+
 
     var request = $.ajax({
                   url: '/breweries',
@@ -49,9 +58,11 @@ $(document).ready(function() {
             // console.log(response.breweries[i][0]);
             var marker = new google.maps.Marker({
                 position: myLatLng,
+                animation: google.maps.Animation.DROP,
                 map: map,
                 title: response.breweries[i][0]
             });
+            markers.push(marker) //store all markers in an array
 
             marker.addListener('click', function() {
               console.log("I've been clicked!");
@@ -60,8 +71,8 @@ $(document).ready(function() {
               infowindow.open(map, this);
             });
           }
-          // debugger
           map.setCenter(myLatLng);
+          map.setZoom(11);
       });
   });
 
