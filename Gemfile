@@ -7,13 +7,9 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-
 gem 'activesupport'
 gem 'activerecord'
-
 gem 'rake'
-
-gem 'shotgun'
 gem 'hirb'
 gem 'bcrypt'
 gem 'httparty'
@@ -29,6 +25,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'shotgun'
   gem 'factory_girl'
   gem 'faker'
   gem 'pry-byebug'
