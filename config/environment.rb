@@ -30,7 +30,7 @@ require 'erb'
 require 'json'
 require 'httparty'
 
-require 'pry-byebug'
+require 'pry-byebug' if development?
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
