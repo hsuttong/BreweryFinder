@@ -18,7 +18,7 @@ GEM
     arel (6.0.3)
     awesome_print (1.6.1)
     backports (3.6.8)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     builder (3.2.2)
     byebug (8.2.2)
     capybara (2.6.2)
@@ -59,7 +59,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
-    puma (3.0.2)
+    puma (3.1.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
