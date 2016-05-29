@@ -5,6 +5,8 @@ This is a simple app to plot breweries for any city on a Google Map.
 Sinatra, Google Maps, and BreweryDB.
 
 
+![BreweryFinder](https://github.com/hsuttong/BreweryFinder/blob/master/screenshots/breweryFinder.png "BreweryFinder")
+
 ### Quickstart:
 
 1.  `bundle install`
